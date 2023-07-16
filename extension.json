@@ -1,0 +1,52 @@
+{
+  "name": "MW_EXT_Align",
+  "version": "1.0.0",
+  "author": [
+    "[https://ihub.to/ iHub TO]",
+    "[https://kitsune.solar/ Kitsune Solar]",
+    "..."
+  ],
+  "url": "https://ihub.to/",
+  "descriptionmsg": "mw-align-desc",
+  "license-name": "[https://choosealicense.com/licenses/mit/ MIT]",
+  "type": "parserhook",
+  "require": {
+    "MediaWiki": ">= 1.31.0",
+    "extensions": {
+      "MW_EXT_Kernel": "*"
+    }
+  },
+  "AutoloadClasses": {
+    "MediaWiki\\Extension\\PkgStore\\MW_EXT_Align": "MW_EXT_Align.class.php"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": [
+      "MediaWiki\\Extension\\PkgStore\\MW_EXT_Align::onParserFirstCallInit"
+    ],
+    "BeforePageDisplay": [
+      "MediaWiki\\Extension\\PkgStore\\MW_EXT_Align::onBeforePageDisplay"
+    ]
+  },
+  "MessagesDirs": {
+    "MW_EXT_Align": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "ext.mw.align.styles": {
+      "styles": [
+        "styles/theme.css"
+      ],
+      "position": "top",
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "modules",
+    "remoteExtPath": "MW_EXT_Align/modules"
+  },
+  "manifest_version": 2
+}
